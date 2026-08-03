@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "ZW46GxIuDzsgsPZxkBkkmVvFVA6zO8e/GRgbA5RNeXY=",
+  "Source": "svc-crud-mongo",
+  "BasePath": "_content/svc-crud-mongo",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

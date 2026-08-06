@@ -37,3 +37,15 @@
 /home/kariswet/project/belajar-c#/svc-crud-mongo/bin/Debug/net8.0/SharpCompress.dll
 /home/kariswet/project/belajar-c#/svc-crud-mongo/bin/Debug/net8.0/Snappier.dll
 /home/kariswet/project/belajar-c#/svc-crud-mongo/bin/Debug/net8.0/ZstdSharp.dll
+/home/kariswet/project/belajar-c#/svc-crud-mongo/obj/Debug/net8.0/svc-crud-mongo.sourcelink.json
+/home/kariswet/project/belajar-c#/svc-crud-mongo/bin/Debug/net8.0/BCrypt-Net-Next.dll
+/home/kariswet/project/belajar-c#/svc-crud-mongo/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/kariswet/project/belajar-c#/svc-crud-mongo/bin/Debug/net8.0/Microsoft.Bcl.Cryptography.dll
+/home/kariswet/project/belajar-c#/svc-crud-mongo/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+/home/kariswet/project/belajar-c#/svc-crud-mongo/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/kariswet/project/belajar-c#/svc-crud-mongo/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+/home/kariswet/project/belajar-c#/svc-crud-mongo/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
+/home/kariswet/project/belajar-c#/svc-crud-mongo/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/kariswet/project/belajar-c#/svc-crud-mongo/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
+/home/kariswet/project/belajar-c#/svc-crud-mongo/bin/Debug/net8.0/System.Formats.Asn1.dll
+/home/kariswet/project/belajar-c#/svc-crud-mongo/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll

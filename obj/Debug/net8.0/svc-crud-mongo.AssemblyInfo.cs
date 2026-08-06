@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("svc-crud-mongo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cdba3fcf9cd27fd03de7c4f2c9de42ee9e26c1e6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f79e1f61ce7928bc3f6de31f6cceabe1a6188daa")]
 [assembly: System.Reflection.AssemblyProductAttribute("svc-crud-mongo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("svc-crud-mongo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

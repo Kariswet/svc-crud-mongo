@@ -3,6 +3,7 @@ namespace svc_crud_mongo.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using svc_crud_mongo.Services;
 using svc_crud_mongo.Models;
+using Microsoft.AspNetCore.Authorization;
 
 [ApiController]
 [Route("api/v1/users")]
@@ -13,45 +14,82 @@ public class UserController : ControllerBase
     {
         _service = service;
     }
-
+    
+    [Authorize]
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
-        return Ok(await _service.GetAll());
+        var start = DateTime.UtcNow;
+        var users = await _service.GetAll();
+        
+        return SetMetadataResponse.Success(this, start, users);
     }
 
+    [Authorize]
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(string id)
     {
-        var user = await _service.GetById(id);
+        var start = DateTime.UtcNow;
+        var user = await _service.GetById(id);   
 
         if (user == null)
-            return NotFound();
-        
-        return Ok(user);
+        {
+            return SetMetadataResponse.Failed(this, start, "user not found", 404);
+        }
+    
+        return SetMetadataResponse.Success(this, start, user);
     }
 
     [HttpPost]
     public async Task<IActionResult> Create(User user)
     {
-        await _service.Create(user);
+        var start = DateTime.UtcNow;
+        var createUser = await _service.Create(user);
         
-        return Ok(user.Id);
+        return SetMetadataResponse.Success(this,start,createUser);
     }
 
     [HttpPut("{id}")]
     public async Task<IActionResult> Update(string id, User user)
     {
-        await _service.Update(id, user);
+        var start = DateTime.UtcNow;
+        var update = await _service.Update(id, user);
 
-        return Ok();
+        if (!update)
+        {
+            return SetMetadataResponse.Failed(this, start, "user not found", 404);
+        }
+
+        return SetMetadataResponse.Success(this, start, update);
     }
 
+    [Authorize(Roles = "admin")]
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(string id)
     {
-        await _service.Delete(id);
+        var start = DateTime.UnixEpoch;
+        var deleted = await _service.Delete(id);
 
-        return Ok();
+        if (!deleted)
+        {
+            return SetMetadataResponse.Failed(this, start, "user not found", 404);
+        }
+        
+        return SetMetadataResponse.Success(this, start, "user deleted successfully");
+    }
+    
+    [Authorize]
+    [HttpPut("{id}/password")]
+    public async Task<IActionResult> ChangePassword(string id, ChangePasswordRequest request)
+    {
+        var start = DateTime.UtcNow;
+        var success = await _service.ChangePassword(id, request.OldPassword, request.NewPassword);
+
+        if (!success)
+        {
+            return SetMetadataResponse.Failed(this, start, "wrong old password", 400);    
+        }
+
+        return SetMetadataResponse.Success(this, start, "password updated successfully");
     }
 }
